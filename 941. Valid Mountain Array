@@ -1,0 +1,20 @@
+class Solution {
+public:
+    bool validMountainArray(vector<int>& arr) {
+        if(arr.size()<3){
+            return false;
+        }
+        int i=0;
+        while(i<arr.size()-1 && arr[i]<arr[i+1]){   //for increasing
+            i++;
+        }
+        if(i==0 || i==arr.size()-1){    //checking peak index is start or end
+            return false; 
+        }
+        while(i<arr.size()-1 && arr[i]>arr[i+1]){   //for decreasing
+            i++;
+        }
+        
+        return i==arr.size()-1;
+    }
+};
