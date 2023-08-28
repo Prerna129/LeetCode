@@ -1,0 +1,28 @@
+class Solution {
+public:
+    vector<int> beautifulArray(int n) {
+        if(n == 1) return {1};
+        vector<int> ans = {1};
+
+        while(ans.size()<n){
+            vector< int> temp;
+
+            for(int it: ans){
+                if((it*2)-1 <= n) temp.push_back(it*2-1);
+            }
+
+            for(int it: ans){
+                if((it*2) <= n) temp.push_back(it*2);
+            }
+
+            for(int it: ans){
+                cout<<it<<" ";
+            }
+            cout<<endl;
+
+            ans = temp;
+        }
+
+        return ans;
+    }
+};
